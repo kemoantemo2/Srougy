@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Employees</title>
+    <link rel="stylesheet" href="/css/manageEmp.css">
+
+</head>
+<body>
+
+    <!-- Container -->
+    <div class="container">
+
+        <div class="card mb-2">
+            <div class="card-header mb-0 text-center" style="background-color: #807f7f77; font-size: 18px; font-weight: bold; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); padding: 5px;">
+             بيانات الموظف
+            </div>
+            <div class="card-body" style="background-color:#e7e7e786;">
+                <div class="row mb-3">
+                    <div class="col-md-4 mb-0 d-flex align-items-center">
+                        <label for="editUsername" class="form-label" style="width: 170px; margin-left: 10px;">اسم المستخدم</label>
+                        <input type="text" class="form-control" id="editUsername" placeholder="تعديل اسم المستخدم" required>
+                    </div>
+                    <div class="col-md-4 mb-0 d-flex align-items-center">
+                        <label for="editPassword" class="form-label" style="width: 170px; margin-left: 10px;">كلمة المرور</label>
+                        <input type="password" class="form-control" id="editPassword" placeholder="تعديل كلمة المرور" required>
+                    </div>
+                    <div class="col-md-4 mb-0 d-flex align-items-center">
+                        <label for="editPhone" class="form-label" style="width: 170px; margin-left: 10px;">رقم الهاتف</label>
+                        <input type="text" class="form-control" id="editPhone" placeholder="تعديل رقم الهاتف" required>
+                    </div>
+                </div>
+        
+                <div class="row mb-3">
+                    <div class="col-md-4 mb-0 d-flex align-items-center">
+                        <label for="editFullname" class="form-label" style="width: 170px; margin-left: 10px;">الاسم</label>
+                        <input type="text" class="form-control" id="editFullname" placeholder="تعديل الاسم" required>
+                    </div>
+                    <div class="col-md-4 mb-0 d-flex align-items-center">
+                        <label for="editCSN" class="form-label" style="width: 170px; margin-left: 10px;">رقم الهوية</label>
+                        <input type="text" class="form-control" id="editCSN" placeholder="تعديل رقم الهوية" required>
+                    </div>
+                    <div class="col-md-4 mb-0 d-flex align-items-center">
+                        <label for="editAddress" class="form-label" style="width: 170px; margin-left: 10px;">العنوان</label>
+                        <input type="text" class="form-control" id="editAddress" placeholder="تعديل العنوان" required>
+                    </div>
+                </div>
+        
+                <div class="row mb-3">
+                    <div class="col-md-4 mb-0 d-flex align-items-center">
+                        <label for="editEmail" class="form-label" style="width: 170px; margin-left: 10px;">البريد الإلكتروني</label>
+                        <input type="email" class="form-control" id="editEmail" placeholder="تعديل البريد الإلكتروني" required>
+                    </div>
+                    <div class="col-md-4 mb-0 d-flex align-items-center">
+                        <label for="editSalary" class="form-label" style="width: 170px; margin-left: 10px;">الراتب</label>
+                        <input type="number" class="form-control" id="editSalary" placeholder="تعديل الراتب" required>
+                    </div>
+                    <div class="col-md-4 mb-0 d-flex align-items-center">
+                        <label for="editEmpImg" class="form-label" style="width: 170px; margin-left: 10px;">صورة الموظف</label>
+                        <input type="file" class="form-control" id="editEmpImg" accept="image/*">
+                    </div>
+                </div>
+        
+                <div class="row mb-3">
+                    <div class="col-md-4 mb-0 d-flex align-items-center">
+                        <label for="editCSNImg" class="form-label" style="width: 170px; margin-left: 10px;">صورة الهوية</label>
+                        <input type="file" class="form-control" id="editCSNImg" accept="image/*">
+                    </div>
+                </div>
+        
+                <div class="row mb-1 d-flex justify-content-between" style="margin-right:15px;margin-left:15px;">
+                    <button id="editEmpData" class="btn btn-primary mt-3">حفظ التغييرات</button>
+                <!--    <button id="newEmpBtn" class="btn btn-primary mt-3">موظف جديد</button> -->
+                    <button id="deleteEmpBtn" class="btn btn-primary mt-3">حذف موظف</button>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        
+
+
+    
+
+
+<!-- Bottom section - Employee Data Table -->
+<table class="employee-table">
+    <thead>
+        <tr>
+            <th>
+                <input type="checkbox" id="select-all">
+            </th>            
+            <th>اسم المستخدم</th>
+            <th>الاسم</th>
+            <th>رقم الهاتف</th>
+            <th>البريد الإلكتروني</th>
+            <th>رقم الهوية</th>
+            <th>العنوان</th>
+            <th>الراتب</th>
+            <th>المستندات</th>
+        </tr>
+    </thead>
+    <tbody id="employeeTableBody">
+        <!-- Employee data will be populated here -->
+    </tbody>
+</table>
+
+    </div>
+
+    <!-- Hidden Form Container for Printing (A4 Style) -->
+<div id="userFormPrint" class="user-form-print" style="display: none;">
+    <div class="form-container">
+        <h2>Employee Information</h2>
+        <div class="form-content">
+            <div>
+                <label for="printUsername">اسم المستخدم:</label>
+                <p id="printUsername"></p>
+            </div>
+            <div>
+                <label for="printFullname">الاسم:</label>
+                <p id="printFullname"></p>
+            </div>
+            <div>
+                <label for="printPhone">رقم الهاتف:</label>
+                <p id="printPhone"></p>
+            </div>
+            <div>
+                <label for="printEmail">البريد الإلكتروني:</label>
+                <p id="printEmail"></p>
+            </div>
+            <div>
+                <label for="printCSN">رقم الهوية:</label>
+                <p id="printCSN"></p>
+            </div>
+            <div>
+                <label for="printAddress">العنوان:</label>
+                <p id="printAddress"></p>
+            </div>
+            <div>
+                <label for="printSalary">الراتب:</label>
+                <p id="printSalary"></p>
+            </div>
+            <div>
+                <label for="printEmployeeImg">صورة الموظف:</label>
+                <img id="printEmployeeImg" alt="Employee Image" style="width: 150px; height: 150px;">
+            </div>
+            <div>
+                <label for="printCSNImg">صورة الهوية:</label>
+                <img id="printCSNImg" alt="CSN Image" style="width: 150px; height: 150px;">
+            </div>
+        </div>
+        <button id="printBtn">طباعة</button>
+    </div>
+</div>
+
+    <script src="/js/manageEmp.js"></script>  <!-- This is your external JavaScript file -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+.container {
+    padding: 20px;
+}
+
+/* Top section - Add Employee Button */
+.top-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.top-section button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.top-section button:hover {
+    background-color: #45a049;
+}
+
+/* Card styling */
+.card {
+    margin-right: 15px;
+    margin-left: 15px;
+    width: 100%; /* Ensure card fills parent */
+    box-sizing: border-box;
+    background-color: #e7e7e786;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Card header */
+.card-header {
+    background-color: #807f7f77;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+
+
+
+/* Card body */
+.card-body {
+    padding: 20px;
+}
+
+/* Ensure form fields are spaced properly */
+.row .col-md-4 {
+    margin-bottom: 15px;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Middle section - Edit Employee */
+.edit-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.edit-section input {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.btn-primary:hover {
+    background-color: #373838;
+    border-color: #373838;
+    color: white;
+  } 
+  .btn-primary {
+    background-color: #272727fb;
+      width: auto;
+  }
+ /* Style for the table */
+.employee-table {
+    width: 100%;  /* Fill the available width of the parent container */
+    table-layout: auto;  /* Allow columns to adjust to content */
+    border-collapse: collapse;  /* Collapsing borders for cleaner appearance */
+}
+
+/* Centering the table headers */
+.employee-table th {
+    text-align: center;  /* Center-align header text */
+    padding: 10px;  /* Add some padding to the headers */
+    background-color: #afafaf;  /* Optional: Light background for headers */
+}
+
+/* Centering the table data cells */
+.employee-table td {
+    text-align: center;  /* Center-align content */
+    padding: 10px;  /* Add padding for spacing */
+    border-bottom: 1px solid #ddd;  /* Optional: Border for separating rows */
+    word-wrap: break-word;  /* Ensure long words break and fit within the column */
+}
+
+/* Optional: Add a hover effect on rows */
+.employee-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
